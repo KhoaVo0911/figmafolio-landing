@@ -1,7 +1,7 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@/components/footer.astro";
-import Navbar from "@/components/navbar/navbar.astro";
+import Footer from "../components/footer.astro";
+import Navbar from "../components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import "@fontsource-variable/bricolage-grotesque";
 import "@/styles/global.css";
@@ -31,6 +31,14 @@ const makeTitle = title
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
@@ -54,6 +62,9 @@ const makeTitle = title
         },
       }}
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer></script>
   </head>
   <body>
     <Navbar />

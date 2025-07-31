@@ -1,49 +1,82 @@
 ---
 import { Image } from "astro:assets";
-import template1 from "@/assets/template1.png";
-import template2 from "@/assets/template2.png";
-import template3 from "@/assets/template3.png";
+import template1 from "../assets/template1.png";
+import template2 from "../assets/template2.png";
+import template3 from "../assets/template3.png";
 ---
 
 <section class="mt-24">
-  <h2 class="text-center text-4xl md:text-5xl font-bold text-slate-900 mb-4">Professional templates</h2>
+  <h2 class="text-center text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+    Professional templates
+  </h2>
   <p class="text-center text-lg text-slate-500 mb-12">
     Start with one of our 8 professionally designed templates or
-    <span class="text-green-600 font-medium cursor-pointer hover:underline">learn how to create your own.</span>
+    <span class="text-green-600 font-medium cursor-pointer hover:underline"
+      >learn how to create your own.</span
+    >
   </p>
   <div class="px-2 md:px-12 lg:px-20">
-    <div class="w-full flex flex-col md:flex-row gap-8 items-center md:justify-center mb-10">
+    <div
+      class="w-full flex flex-col md:flex-row gap-8 items-center md:justify-center mb-10">
       <!-- Card 1 -->
-      <div class="h-[351px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0" style="width:421.33px">
+      <div
+        class="h-[351px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0"
+        style="width:421.33px">
         <div class="w-full h-[217px]">
-          <Image src={template1} alt="Light and Modern Figma Portfolio Template" class="w-full h-full object-cover rounded-t-[16px]" />
+          <Image
+            src={template1}
+            alt="Light and Modern Figma Portfolio Template"
+            class="w-full h-full object-cover rounded-t-[16px]"
+          />
         </div>
         <div class="flex-1 flex items-center justify-center px-6">
-          <h3 class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">Light and Modern Figma Portfolio Template</h3>
+          <h3
+            class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">
+            Light and Modern Figma Portfolio Template
+          </h3>
         </div>
       </div>
       <!-- Card 2 -->
-      <div class="h-[351px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0" style="width:421.33px">
+      <div
+        class="h-[351px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0"
+        style="width:421.33px">
         <div class="w-full h-[217px]">
-          <Image src={template2} alt="Minimalist Figma Portfolio Template" class="w-full h-full object-cover rounded-t-[16px]" />
+          <Image
+            src={template2}
+            alt="Minimalist Figma Portfolio Template"
+            class="w-full h-full object-cover rounded-t-[16px]"
+          />
         </div>
         <div class="flex-1 flex items-center justify-center px-6">
-          <h3 class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">Minimalist Figma Portfolio Template</h3>
+          <h3
+            class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">
+            Minimalist Figma Portfolio Template
+          </h3>
         </div>
       </div>
       <!-- Card 3 -->
-      <div class="h-[351px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0" style="width:421.33px">
+      <div
+        class="h-[351px] bg-white rounded-[16px] border border-[#ededed] flex flex-col shadow-sm transition hover:shadow-md flex-shrink-0"
+        style="width:421.33px">
         <div class="w-full h-[217px]">
-          <Image src={template3} alt="Sharp and Minimal Figma Portfolio Template" class="w-full h-full object-cover rounded-t-[16px]" />
+          <Image
+            src={template3}
+            alt="Sharp and Minimal Figma Portfolio Template"
+            class="w-full h-full object-cover rounded-t-[16px]"
+          />
         </div>
         <div class="flex-1 flex items-center justify-center px-6">
-          <h3 class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">Sharp and Minimal Figma Portfolio Template</h3>
+          <h3
+            class="text-xl md:text-2xl font-bold text-slate-900 text-center leading-snug">
+            Sharp and Minimal Figma Portfolio Template
+          </h3>
         </div>
       </div>
     </div>
   </div>
   <div class="flex justify-center">
-    <button class="bg-green-600 hover:bg-green-700 text-white font-semibold text-lg rounded-full px-10 py-3 shadow-md transition focus:outline-none focus:ring-2 focus:ring-green-400">
+    <button
+      class="bg-[#4D9F70] hover:bg-[#388E5C] text-white font-semibold text-lg rounded-full px-10 py-3 shadow-md transition focus:outline-none focus:ring-2 focus:ring-green-400">
       View all 8 templates
     </button>
   </div>
