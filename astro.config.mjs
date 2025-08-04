@@ -8,7 +8,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://figmafolio.com",
   integrations: [mdx(), sitemap(), icon(), tailwind()],
   vite: {
     resolve: {

@@ -20,8 +20,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "FigmaFolio"
+  : "Figmafolio: Convert Figma Designs to Websites Instantly";
 ---
 
 <!doctype html>
@@ -43,7 +43,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="Figmafolio: Convert Figma Designs to Websites Instantly"
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
@@ -54,11 +54,11 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Figmafolio: Convert Figma Designs to Websites Instantly`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Figmafolio: Convert Figma Designs to Websites Instantly",
         },
       }}
     />

@@ -24,8 +24,8 @@ const menuitems = [
 <Container>
   <header class="w-full flex items-center justify-between py-6 px-0 relative">
     {/* Logo */}
-    <a href="/" class="flex items-center text-[29px] font-extrabold tracking-tight select-none mr-6">
-      <span class="text-slate-900">Figma</span><span class="text-[#4d9f70]">folio</span>
+    <a href="/" class="logo flex items-center select-none mr-6">
+      <span class="figma-logo">Figma</span><span class="folio-logo">folio</span>
     </a>
     {/* Menu center (desktop) */}
     <nav class="hidden lg:flex flex-1 justify-center" aria-label="Main navigation">
@@ -95,8 +95,8 @@ const menuitems = [
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-30 z-40 hidden"></div>
     <nav id="mobile-menu" aria-label="Mobile navigation" class="fixed top-0 left-0 w-full h-full bg-white z-50 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col p-6">
       <div class="flex items-center justify-between mb-10">
-        <a href="/" class="flex items-center text-2xl font-extrabold tracking-tight select-none">
-          <span class="text-slate-800">Figma</span><span class="text-[#4d9f70]">folio</span>
+        <a href="/" class="logo flex items-center select-none">
+          <span class="figma-logo">Figma</span><span class="folio-logo">folio</span>
         </a>
         <button id="mobile-menu-close" class="p-2" aria-label="Close menu">
           <svg class="w-7 h-7 text-[#4d9f70]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -149,3 +149,19 @@ const menuitems = [
     </script>
   </header>
 </Container>
+<style>
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.figma-logo {
+  color: #3a5e3a;
+  font-weight: 700;
+}
+.folio-logo {
+  color: #222;
+  font-weight: 700;
+}
+</style>
