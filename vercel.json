@@ -1,23 +1,15 @@
 {
-    "rewrites": [
+    "redirects": [
         {
-            "source": "/x:slug",
-            "destination": "https://app.figmafolio.com/x:slug"
-        },
-        {
-            "source": "/:slug",
-            "destination": "https://app.figmafolio.com/:slug"
-        },
-        {
-            "source": "/:path*",
+            "source": "/:id",
             "has": [
                 {
-                    "type": "header",
-                    "key": "x-vercel-no-rewrite",
-                    "value": "true"
+                    "type": "host",
+                    "value": "figmafolio.com"
                 }
             ],
-            "destination": "/:path*"
+            "destination": "https://app.figmafolio.com/:id",
+            "permanent": true
         }
     ]
 }
