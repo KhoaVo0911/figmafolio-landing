@@ -1,0 +1,23 @@
+{
+    "rewrites": [
+        {
+            "source": "/x:slug",
+            "destination": "https://app.figmafolio.com/x:slug"
+        },
+        {
+            "source": "/:slug",
+            "destination": "https://app.figmafolio.com/:slug"
+        },
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "x-vercel-no-rewrite",
+                    "value": "true"
+                }
+            ],
+            "destination": "/:path*"
+        }
+    ]
+}
