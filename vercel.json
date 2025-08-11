@@ -1,14 +1,8 @@
 {
     "redirects": [
         {
-            "source": "/:id",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "figmafolio.com"
-                }
-            ],
-            "destination": "https://app.figmafolio.com/:id",
+            "source": "/((?!about|contact|pricing).*)",
+            "destination": "https://app.figmafolio.com/$1",
             "permanent": true
         }
     ]
