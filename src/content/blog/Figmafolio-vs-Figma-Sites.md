@@ -11,8 +11,6 @@ category: "Comparison"
 tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
 ---
 
-<!-- Nếu bạn dùng layout có Navbar/Footer, hãy import ở đầu file hoặc để layout tự render -->
-
 <!-- Hero -->
 <div class="text-center max-w-2xl mx-auto mt-10 mb-8">
   <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Figmafolio vs Figma Sites</h1>
@@ -121,7 +119,6 @@ tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
     <!-- Box 1 -->
     <div class="bg-[#f8fafc] rounded-2xl p-8 flex flex-col items-start shadow-md h-full">
       <div class="mb-4">
-        <!-- Icon pin -->
         <svg class="w-10 h-10 text-[#24cb71]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
           <path d="M7 3v2a5 5 0 0 0 5 5h0a5 5 0 0 0 5-5V3" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M12 21V10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -170,7 +167,6 @@ tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
   </div>
 </div>
 
-<!-- Call to Action -->
 <div class="max-w-[1280px] mx-auto mb-16">
   <div class="bg-[#f8fafc] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-12">
     <div class="flex-1">
