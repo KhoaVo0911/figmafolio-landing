@@ -15,7 +15,7 @@ tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
 <div class="text-center max-w-2xl mx-auto mt-10 mb-8">
   <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Figmafolio vs Figma Sites</h1>
   <p class="text-gray-600 mb-6">Figmafolio and Figma Sites both let you turn your Figma designs into web experiences—but they’re built for different needs. Here’s a side-by-side look to help you choose.</p>
-  <a href="https://app.figmafolio.com/en/auth" class="inline-block bg-[#4d9f70] text-white px-6 py-3 rounded-full font-semibold text-lg shadow hover:bg-[#388e5c] transition underline">Start for Free</a>
+  <a href="#" id="blog-start-link" class="inline-block bg-[#4d9f70] text-white px-6 py-3 rounded-full font-semibold text-lg shadow hover:bg-[#388e5c] transition underline">Start for Free</a>
 </div>
 
 <!-- What this page covers -->
@@ -172,8 +172,8 @@ tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
     <div class="flex-1">
       <h2 class="text-2xl font-bold mb-2">Ready to showcase your design work?</h2>
       <p class="mb-4 text-gray-600">Start with our free 7-day trial, then upgrade only if you love it. No Figma Pro subscription required.</p>
-      <a href="#" class="inline-block bg-[#4d9f70] text-white px-6 py-3 rounded-full font-semibold text-lg shadow hover:bg-[#388e5c] transition mr-2">Start Free Trial</a>
-      <a href="#" class="inline-block border border-[#4d9f70] text-[#4d9f70] px-6 py-3 rounded-full font-semibold text-lg hover:bg-[#e6f4ec] transition">View Pricing</a>
+      <a href="#" id="blog-start-trial-link" class="inline-block bg-[#4d9f70] text-white px-6 py-3 rounded-full font-semibold text-lg shadow hover:bg-[#388e5c] transition mr-2">Start Free Trial</a>
+      <a href="#" id="blog-view-pricing-link" class="inline-block border border-[#4d9f70] text-[#4d9f70] px-6 py-3 rounded-full font-semibold text-lg hover:bg-[#e6f4ec] transition">View Pricing</a>
     </div>
     <div class="flex-shrink-0">
       <!-- <div class="bg-[#f8fafc] rounded-2xl border border-[#E5EAF0] w-[440px] h-[260px] md:w-[520px] md:h-[320px] flex items-center justify-center">
@@ -182,3 +182,51 @@ tags: ["figmafolio", "figma sites", "portfolio", "comparison"]
     </div>
   </div>
 </div>
+
+<script>
+  // Language detection logic
+  const getCurrentLanguage = () => {
+    // Try to get language from URL path first
+    const pathSegments = window.location.pathname.split('/');
+    const langFromPath = pathSegments[1];
+    
+    // Supported languages
+    const supportedLangs = ['en', 'es', 'de', 'zh', 'jp', 'fr'];
+    
+    if (supportedLangs.includes(langFromPath)) {
+      return langFromPath;
+    }
+    
+    // Fallback to browser language
+    const browserLang = navigator.language.split('-')[0];
+    return supportedLangs.includes(browserLang) ? browserLang : 'en';
+  };
+
+  // Update all blog links with current language
+  const updateBlogLinks = () => {
+    const currentLanguage = getCurrentLanguage();
+    const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+    const pricingUrl = `/pricing`;
+    
+    // Update hero start link
+    const heroStartLink = document.getElementById('blog-start-link');
+    if (heroStartLink) {
+      heroStartLink.href = authUrl;
+    }
+    
+    // Update start trial link
+    const startTrialLink = document.getElementById('blog-start-trial-link');
+    if (startTrialLink) {
+      startTrialLink.href = authUrl;
+    }
+    
+    // Update view pricing link
+    const viewPricingLink = document.getElementById('blog-view-pricing-link');
+    if (viewPricingLink) {
+      viewPricingLink.href = pricingUrl;
+    }
+  };
+
+  // Update links when page loads
+  document.addEventListener('DOMContentLoaded', updateBlogLinks);
+</script>

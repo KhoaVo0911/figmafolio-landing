@@ -77,7 +77,8 @@ import Container from "../../components/container.astro";
           </div>
           <div class="flex items-start mt-4">
             <a
-              href="https://app.figmafolio.com/en/auth"
+              href="#"
+              id="custom-domain-start-link"
               class="inline-block rounded-full bg-[#4d9f70] text-white font-semibold px-6 py-2 text-base shadow hover:bg-[#388e5c] transition"
               >Get started with custom domain</a
             >
@@ -219,3 +220,36 @@ import Container from "../../components/container.astro";
     </section>
   </Container>
 </Layout>
+
+<script>
+  // Language detection logic
+  const getCurrentLanguage = () => {
+    // Try to get language from URL path first
+    const pathSegments = window.location.pathname.split("/");
+    const langFromPath = pathSegments[1];
+
+    // Supported languages
+    const supportedLangs = ["en", "es", "de", "zh", "jp", "fr"];
+
+    if (supportedLangs.includes(langFromPath)) {
+      return langFromPath;
+    }
+
+    // Fallback to browser language
+    const browserLang = navigator.language.split("-")[0];
+    return supportedLangs.includes(browserLang) ? browserLang : "en";
+  };
+
+  // Update custom domain start link with current language
+  const updateCustomDomainLink = () => {
+    const startLink = document.getElementById("custom-domain-start-link");
+    if (startLink) {
+      const currentLanguage = getCurrentLanguage();
+      const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+      startLink.href = authUrl;
+    }
+  };
+
+  // Update link when page loads
+  document.addEventListener("DOMContentLoaded", updateCustomDomainLink);
+</script>

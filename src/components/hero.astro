@@ -23,7 +23,8 @@ import downloadVideo from "../assets/Download.mp4";
     <div
       class="mt-8 flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
       <Link
-        href="https://app.figmafolio.com/en/auth"
+        href="#"
+        id="hero-get-started-link"
         target="_blank"
         class="flex gap-2 items-center justify-center rounded-full bg-[#4d9f70] text-white font-semibold text-lg px-8 py-3 shadow-md hover:bg-[#388e5c] transition-colors duration-150"
         rel="noopener">
@@ -61,3 +62,36 @@ import downloadVideo from "../assets/Download.mp4";
     </div>
   </div>
 </main>
+
+<script>
+  // Language detection logic
+  const getCurrentLanguage = () => {
+    // Try to get language from URL path first
+    const pathSegments = window.location.pathname.split("/");
+    const langFromPath = pathSegments[1];
+
+    // Supported languages
+    const supportedLangs = ["en", "es", "de", "zh", "jp", "fr"];
+
+    if (supportedLangs.includes(langFromPath)) {
+      return langFromPath;
+    }
+
+    // Fallback to browser language
+    const browserLang = navigator.language.split("-")[0];
+    return supportedLangs.includes(browserLang) ? browserLang : "en";
+  };
+
+  // Update hero get started link with current language
+  const updateHeroLink = () => {
+    const heroLink = document.getElementById("hero-get-started-link");
+    if (heroLink) {
+      const currentLanguage = getCurrentLanguage();
+      const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+      heroLink.href = authUrl;
+    }
+  };
+
+  // Update link when page loads
+  document.addEventListener("DOMContentLoaded", updateHeroLink);
+</script>

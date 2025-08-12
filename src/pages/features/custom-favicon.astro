@@ -61,6 +61,7 @@ import Container from "../../components/container.astro";
           <div class="flex items-start mt-4">
             <a
               href="#"
+              id="custom-favicon-upgrade-link"
               class="inline-block rounded-full bg-[#4d9f70] text-white font-semibold px-6 py-2 text-base shadow hover:bg-[#388e5c] transition"
               >Upgrade & Add Favicon</a
             >
@@ -207,3 +208,36 @@ import Container from "../../components/container.astro";
     </section>
   </Container>
 </Layout>
+
+<script>
+  // Language detection logic
+  const getCurrentLanguage = () => {
+    // Try to get language from URL path first
+    const pathSegments = window.location.pathname.split("/");
+    const langFromPath = pathSegments[1];
+
+    // Supported languages
+    const supportedLangs = ["en", "es", "de", "zh", "jp", "fr"];
+
+    if (supportedLangs.includes(langFromPath)) {
+      return langFromPath;
+    }
+
+    // Fallback to browser language
+    const browserLang = navigator.language.split("-")[0];
+    return supportedLangs.includes(browserLang) ? browserLang : "en";
+  };
+
+  // Update custom favicon upgrade link with current language
+  const updateCustomFaviconLink = () => {
+    const upgradeLink = document.getElementById("custom-favicon-upgrade-link");
+    if (upgradeLink) {
+      const currentLanguage = getCurrentLanguage();
+      const authUrl = `https://app.figmafolio.com/${currentLanguage}/auth`;
+      upgradeLink.href = authUrl;
+    }
+  };
+
+  // Update link when page loads
+  document.addEventListener("DOMContentLoaded", updateCustomFaviconLink);
+</script>
